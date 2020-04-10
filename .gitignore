@@ -1,0 +1,5 @@
+data
+.idea
+*.iml
+covid-dicoms.tar.gz
+calculate-basis-vectors/target
