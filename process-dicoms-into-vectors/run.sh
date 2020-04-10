@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 echo "Downloading DICOMs"
 # If not on GCP need to download this
@@ -10,7 +11,7 @@ $HOME/gsutil/gsutil cp gs://covid-dicoms/PREM-20090113.zip /data/PREM-20090113.z
 #wget https://console.cloud.google.com/storage/browser/covid-dicoms/covid-dicoms.tar.gz
 echo "Success, unzipping."
 tar -xzf /data/covid-dicoms.tar.gz -C /data
-unzip PREM-20090113.zip
+unzip -q /data/PREM-20090113.zip -d /data
 
 python /program.py
 

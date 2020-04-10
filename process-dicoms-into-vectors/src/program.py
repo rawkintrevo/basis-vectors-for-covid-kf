@@ -54,10 +54,10 @@ with open("/mnt/data/s.csv", 'a') as f:
         tv = ",".join([str(v) for v in m['img3d'].reshape((1,-1))[0]])
         f.write(tv + "\n")
     print("beginning work on 'healthy' cases")
-    for pt in listdir("data/PREM-20090113"):
-        for date in listdir(f"data/PREM-20090113/{pt}"):
-            for scan in listdir(f"data/PREM-20090113/{pt}/{date}"):
-                m = create_3d_matrix(f"data/PREM-20090113/{pt}/{date}/{scan}")
+    for pt in listdir("/data/PREM-20090113"):
+        for date in listdir(f"/data/PREM-20090113/{pt}"):
+            for scan in listdir(f"/data/PREM-20090113/{pt}/{date}"):
+                m = create_3d_matrix(f"/data/PREM-20090113/{pt}/{date}/{scan}")
                 if m['img_shape'][2] != tgt_length:
                     m['img3d'] = zoom(m['img3d'], (1,1,float(tgt_length)/m["img_shape"][2]))
                 tv = ",".join([str(v) for v in m['img3d'].reshape((1,-1))[0]])

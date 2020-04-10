@@ -1,12 +1,13 @@
 
 ### Quickstart
 
-1. Install Kubeflow on your favorite cloud provider (or locally). 
+1. Install Kubeflow on [your favorite cloud provider](https://www.kubeflow.org/docs/gke/) (or locally). 
 1. Create a Jupyter Notebook Server.
 1. Upload `pipeline/DICOM Images to Basis Vectors Pipe.iynb`
-
+1. Run all cells- links should appear in the last cell which you can click to see your run output.
 
 ### Docker Files
+
 
 `rawkintrevo/covid-prep-docim`
 
@@ -22,4 +23,4 @@ outputs basis vectors and linear combinations at `/data/drmVt.txt` and `/data/dr
 ### We're all in this together. 
 
 If you would like to collaborate on upcoming works regarding the COVID pandemic, please reach out to
-`papers at aboriginal-armadillo dot com`.  
+`papers at aboriginal-armadillo d0t com`.  
