@@ -44,7 +44,7 @@ object App {
     // p is oversampling parameter,
     // and q is the number of additional power iterations
     // Read https://mahout.apache.org/users/dim-reduction/ssvd.html
-    val k = 5
+    val k = args(0).toInt
     val p = 15
     val q = 0
 
@@ -53,8 +53,8 @@ object App {
 
 
 
-    val V = drmV.t.checkpoint().rdd.saveAsTextFile("file:///data/drmVt.txt")
-    val U = drmU.checkpoint().rdd.saveAsTextFile("file:///data/drmU.txt")
+    val V = drmV.checkpoint().rdd.saveAsTextFile("file:///data/drmV")
+    val U = drmU.t.checkpoint().rdd.saveAsTextFile("file:///data/drmU")
 
     print("All is good")
 

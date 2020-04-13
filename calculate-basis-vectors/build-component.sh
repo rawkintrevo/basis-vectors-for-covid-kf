@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 image_name=rawkintrevo/covid-basis-vectors # Specify the image name here
-image_tag=0.1.0
+image_tag=0.1.2
 full_image_name=${image_name}:${image_tag}
 
 cd "$(dirname "$0")"

@@ -19,6 +19,12 @@ Vectors written to `/mnt/data/s.csv`.
 - Conatains "fat" jar that is built with `calculate-basis-vectors/` source. Reads `/data/s.csv` and 
 outputs basis vectors and linear combinations at `/data/drmVt.txt` and `/data/drmU.txt`.
 
+### Data
+
+Non COVID-19 CT Scans: https://www.via.cornell.edu/databases/simbadb.html
+
+COVID-19 Positive CT Scans: https://coronacases.org 
+(accessed via `other/collect-data-from-coronacases.org`)
 
 ### We're all in this together. 
 
