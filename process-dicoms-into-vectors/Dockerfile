@@ -22,11 +22,5 @@ RUN ldconfig
 # todo move these to requirements.txt
 RUN pip install numpy
 RUN pip install scipy
-# install gsutil lightly
-RUN wget https://storage.googleapis.com/pub/gsutil.tar.gz
-RUN tar xfz gsutil.tar.gz -C $HOME
-ENV PATH="${PATH}:$HOME/gsutil"
-RUN apt install unzip
 
-COPY ./run.sh /run.sh
 COPY src/program.py /program.py

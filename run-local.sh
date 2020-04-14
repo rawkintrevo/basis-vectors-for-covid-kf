@@ -8,6 +8,7 @@
 docker run -v $PWD/data:/data  rawkintrevo/covid-prep-dicom:0.7.12.11 python /program.py --input_dir /data --output_dir /data --min_slice 150 --max_slice 150
 # which will write `s.csv` in `data/`
 
+docker run -it -v $PWD/data:/data rawkintrevo/covid-basis-vectors:0.1.8 /opt/spark/bin/spark-submit --master local[*] --class org.rawkintrevo.covid.App /covid-0.1-jar-with-dependencies.jar  200 15 1
+# This is actually a full svd. Next regress the original images on basis vectors to determine which basis vectors are least important.
 
-docker run -it -v $PWD/data:/data rawkintrevo/covid-basis-vectors:0.1.2 /opt/spark/bin/spark-submit --master local[*] /covid-0.1-jar-with-dependencies.jar --class org.rawkintrevo.covid.App
 

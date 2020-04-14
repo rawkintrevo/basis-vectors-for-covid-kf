@@ -7,6 +7,7 @@ import org.apache.mahout.math.scalabindings.RLikeOps._
 import org.apache.mahout.math.drm.RLikeDrmOps._
 import org.apache.mahout.sparkbindings._
 import org.apache.mahout.math.decompositions._
+import org.apache.mahout.math.scalabindings.MahoutCollections._
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
@@ -38,6 +39,8 @@ object App {
 
 
     println("---------------- voxelDRM.t.ncol ------------------------------", voxelDRM.t.ncol, voxelDRM.ncol)
+    println(args)
+    println("args(0): ", args(0))
 
     // k, p, q should all be cli parameters
     // k is rank of the output e.g. the number of eigenfaces we want out.
@@ -45,8 +48,8 @@ object App {
     // and q is the number of additional power iterations
     // Read https://mahout.apache.org/users/dim-reduction/ssvd.html
     val k = args(0).toInt
-    val p = 15
-    val q = 0
+    val p = args(1).toInt
+    val q = args(2).toInt
 
 
     val(drmU, drmV, s) = dssvd(voxelDRM.t, k, p, q)
@@ -56,6 +59,7 @@ object App {
     val V = drmV.checkpoint().rdd.saveAsTextFile("file:///data/drmV")
     val U = drmU.t.checkpoint().rdd.saveAsTextFile("file:///data/drmU")
 
+    sc.parallelize(s.toArray,1).saveAsTextFile("file:///data/s")
     print("All is good")
 
   }

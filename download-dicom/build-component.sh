@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-image_name=rawkintrevo/covid-prep-dicom # Specify the image name here
-image_tag=0.8.0.0
+image_name=rawkintrevo/download-dicom # Specify the image name here
+image_tag=0.0.0.4
 full_image_name=${image_name}:${image_tag}
 
 cd "$(dirname "$0")"
